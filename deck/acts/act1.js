@@ -40,13 +40,20 @@
     #s-h3 .lad .rung { stroke: var(--fg); stroke-width: 6; stroke-linecap: round; }
     #s-h3 .lad .gone { stroke: var(--bad); stroke-width: 6; stroke-dasharray: 14 12; stroke-linecap: round; transition: opacity .8s var(--ease); }
     #s-h3[data-at="0"] .lad .gone { stroke: var(--fg); stroke-dasharray: none; }
-    #s-h3 .nums { position: absolute; left: 720px; right: var(--pad-x); top: 330px; }
-    #s-h3 .nums .row2 { display: grid; grid-template-columns: 340px 1fr; align-items: baseline; padding: 20px 0; border-top: 2px solid var(--hair); }
+    #s-h3 .lad .new { stroke: var(--accent); stroke-width: 7; stroke-linecap: round; transition: opacity .8s var(--ease); }
+    #s-h3 .lad .newlbl { fill: var(--accent); font-family: var(--mono); font-size: 26px; letter-spacing: 0.08em; }
+    #s-h3 .lad .nwrap { opacity: 0; transition: opacity .8s var(--ease); }
+    #s-h3[data-at="3"] .lad .nwrap { opacity: 1; }
+    #s-h3 .lad { overflow: visible; }
+    #s-h3 .nums { position: absolute; left: 720px; right: var(--pad-x); top: 300px; }
+    #s-h3 .nums .row2 { display: grid; grid-template-columns: 300px 1fr; align-items: baseline; padding: 12px 0; border-top: 2px solid var(--hair); }
     #s-h3 .nums .row2:last-child { border-bottom: 2px solid var(--hair); }
-    #s-h3 .nums .big { font-size: 112px; font-weight: 500; letter-spacing: -0.04em; line-height: 1; }
+    #s-h3 .nums .good2 .big { color: var(--good); }
+    #s-h3 .nums .big { font-size: 92px; font-weight: 500; letter-spacing: -0.04em; line-height: 1; }
     #s-h3 .nums .bad2 .big { color: var(--bad); }
     #s-h3 .nums .cap { font-size: 31px; color: var(--dim); line-height: 1.25; }
     #s-h3 .nums .cap b { color: var(--fg); font-weight: 500; }
+    #s-h3 .aug { position: absolute; left: 720px; right: var(--pad-x); top: 640px; font-size: 38px; letter-spacing: -0.01em; line-height: 1.2; }
 
     /* 04 producir → juzgar */
     #s-h4 .chain { position: absolute; left: var(--pad-x); right: var(--pad-x); top: 380px; display: grid; grid-template-columns: 1fr 70px 1fr 70px 1fr; align-items: stretch; }
@@ -114,6 +121,7 @@
       <line class="rail" x1="80" y1="0" x2="80" y2="520"/><line class="rail" x1="360" y1="0" x2="360" y2="520"/>
       ${[40, 140, 240, 340].map((y) => `<line class="rung" x1="80" y1="${y}" x2="360" y2="${y}"/>`).join('')}
       <line class="gone" x1="80" y1="460" x2="360" y2="460"/>
+      <g class="nwrap"><line class="new" x1="80" y1="90" x2="360" y2="90"/><text class="newlbl" x="378" y="62">revisar</text><text class="newlbl" x="378" y="98">evaluar</text><text class="newlbl" x="378" y="134">medir</text></g>
     </svg>`;
 
   const receipt = `<div class="h">TIENDA LA ESQUINA</div><div>RFC XAXX010101000</div><div>20/11/2026 09:41</div>
@@ -140,7 +148,7 @@
         ${read('La brecha no es entre quien usa IA y quien no. Es entre quien la usa a fondo, con buenas herramientas, y todos los demás.', 2)}
         <div class="f-src">OpenAI (feb. y ago. 2026) · Menlo Ventures, 2025: The State of Consumer AI (≈3%, encuesta EE. UU. extrapolada)</div>`,
       notes: `
-        <p>Primer hecho, y el que más sorprende. Mil millones de personas usan ChatGPT cada semana. Cada punto aquí es uno de cada cien usuarios.</p>
+        <p>Primer hecho, y el que acabamos de ver al revés en esta sala. Mil millones de personas usan ChatGPT cada semana. Cada punto aquí es uno de cada cien usuarios.</p>
         <p class="dir">[Clic: se encienden cinco.]</p>
         <p>Pagan: cincuenta millones. Entre 3 y 6 por ciento, depende de la fuente. Menos de uno de cada veinte. Entonces la mayoría de la gente formó su opinión de la IA con la versión gratuita, de uso ocasional, para cosas sueltas. Es como juzgar internet por el WiFi del aeropuerto.</p>
         <p class="dir">[Clic.]</p>
@@ -189,15 +197,19 @@
         <div class="nums">
           <div class="row2 bad2" data-step="1"><span class="big">−13 %</span><span class="cap">empleo relativo de <b>22 a 25 años</b> en las ocupaciones más expuestas a IA</span></div>
           <div class="row2" data-step="1"><span class="big">≈ 0</span><span class="cap"><b>Con más experiencia</b>, mismas ocupaciones: estable o creciendo</span></div>
+          <div class="row2 good2" data-step="3"><span class="big">↑</span><span class="cap">Donde la IA <b>aumenta</b> en vez de automatizar, el empleo <b>crece</b></span></div>
         </div>
-        ${read('Si el que empieza ya no hace el trabajo pesado, ¿dónde aprende a revisar el trabajo de la máquina?', 2)}
+        ${read('El primer escalón cambia de forma: ya no es hacer el trabajo pesado, es demostrar que sabes revisarlo. <em>Llega con historial.</em>', 2)}
+
         <div class="f-src">Brynjolfsson, Chandar y Chen (Stanford, ago. 2025), datos de nómina de ADP, EE. UU.: programación, atención a clientes, análisis de datos</div>`,
       notes: `
         <p>Tercer hecho: el ajuste cae en el primer escalón.</p>
         <p class="dir">[Clic: el escalón de abajo desaparece.]</p>
         <p>El mismo estudio de Stanford, con datos de nómina de millones de trabajadores en Estados Unidos: los de 22 a 25 años en las ocupaciones más expuestas, como programación, atención a clientes o análisis de datos, cayeron 13 por ciento en empleo relativo. Los que tienen más experiencia, en las mismas ocupaciones, están estables o creciendo. Ojo: son datos de Estados Unidos; no sé si en México pasa igual, y me encantaría que alguien aquí lo midiera.</p>
         <p class="dir">[Clic.]</p>
-        <p>Y la pregunta que me preocupa como alguien que contrata: si el que empieza ya no hace el trabajo pesado, ¿dónde aprende a revisar lo que hace la máquina? Porque eso es justo lo que se vuelve valioso.</p>`,
+        <p>Pero el escalón no desaparece: cambia de forma. Antes entrabas haciendo el trabajo pesado. Ahora entras demostrando que sabes revisarlo.</p>
+        <p class="dir">[Clic: aparece el escalón nuevo, más arriba.]</p>
+        <p>Y el mismo estudio trae la salida: donde la IA aumenta el trabajo en vez de automatizarlo, el empleo crece. Entonces, a los que van empezando: si las empresas contratan historial, constrúyanlo antes de entrar. Un proyecto publicado, una evaluación bien hecha, un repo donde se vea que saben cuándo el modelo se equivoca. Eso ya no se los da la carrera sola; se lo pueden dar ustedes. Y eso nos lleva a qué es lo que vale ahora.</p>`,
     },
     {
       id: 'h4',

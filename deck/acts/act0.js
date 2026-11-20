@@ -64,6 +64,7 @@
         <div class="a0-by t-label"><span>Carlos Haro</span><span class="bar"></span><span>3er Congreso Nacional de Ciencia de Datos</span><span class="bar"></span><span>20 nov 2026</span></div>`,
       notes: `
         <p class="dir">[Esto es un panel, no una charla. El deck acompaña: cada hecho estilizado es un turno. Si el moderador pregunta otra cosa, saltar al hecho que conteste.]</p>
+        <p class="dir">[Antes de todo, la sala: "Levanten la mano los que usan IA cada semana." Casi todos. "Ahora, los que pagan por ella." Muchos más que 5%. "Esta sala no es el promedio. Y eso es justo lo que les quiero contar."]</p>
         <p>Gracias a Bourbaki y al congreso por la invitación. Yo vengo del lado de la industria: trabajo en IA dentro de un banco, y lo que traigo no es una teoría. Son regularidades: cosas que veo una y otra vez, algunas con datos y otras desde adentro.</p>
         <p>Los economistas tienen un nombre para eso.</p>`,
     },
