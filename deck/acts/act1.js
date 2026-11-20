@@ -71,13 +71,18 @@
 
     /* 05 construir */
     #s-h5 .f-head h2 { font-size: 76px; }
-    #s-h5 .f-read { top: 790px; }
+    #s-h5 .f-read { top: 826px; }
     #s-h5 .two { position: absolute; left: var(--pad-x); right: var(--pad-x); top: 318px; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
     #s-h5 .two .t-label { display: block; font-size: 20px; margin-bottom: 14px; }
-    #s-h5 pre.code { font-size: 23px; line-height: 1.42; border-color: var(--faint); }
+    #s-h5 pre.code { font-size: 21px; line-height: 1.36; padding-top: 14px; padding-bottom: 14px; border-color: var(--faint); }
     #s-h5 pre.code .c { color: var(--faint); }
     #s-h5 pre.code .warn { color: var(--bad); font-weight: 700; }
     #s-h5 .right .t-label { color: var(--accent); }
+    #s-h5 .pyr { margin-top: 16px; display: grid; gap: 5px; }
+    #s-h5 .pyr div { justify-self: center; text-align: center; font-family: var(--mono); font-size: 21px; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 0; border: var(--stroke) solid var(--faint); }
+    #s-h5 .pyr .l1 { width: 100%; border-color: var(--good); color: var(--good); }
+    #s-h5 .pyr .l2 { width: 70%; }
+    #s-h5 .pyr .l3 { width: 40%; color: var(--faint); border-style: dashed; }
     #s-h5 .glass { border: var(--stroke) solid var(--accent); border-radius: 14px; padding: 18px 28px 22px; }
     #s-h5 .glass .nm { font-size: 36px; font-weight: 500; }
     #s-h5 .glass .nm small { font-size: 26px; color: var(--dim); font-weight: 400; }
@@ -180,7 +185,7 @@
       notes: `
         <p>Segundo hecho: se abarata la tarea, no el puesto. Piensen en un puesto de análisis como un conjunto de tareas: buscar, redactar, analizar, decidir, explicar. Esto es ilustrativo.</p>
         <p class="dir">[Clic: buscar y redactar se encogen.]</p>
-        <p>La IA abarata algunas, sobre todo buscar y redactar. El puesto no desaparece. Lo que cambia es cuántas personas necesitas para hacerlo, y a quién contratas.</p>
+        <p>La IA abarata algunas, sobre todo buscar y redactar. Y abarata cosas que antes nadie hacía por caras: en software, las pruebas exhaustivas y la verificación formal no son nuevas, eran demasiado costosas. Hay quien ya le llama la edad de oro de la verificación. El puesto no desaparece. Lo que cambia es cuántas personas necesitas para hacerlo, y a quién contratas.</p>
         <p class="dir">[Clic.]</p>
         <p>Y los datos de Stanford dicen lo mismo con nómina real: el ajuste ocurre sobre todo en el empleo, no en los salarios. No se están borrando ocupaciones; se está cambiando quién entra. Y eso nos lleva a quién se queda afuera.</p>`,
     },
@@ -237,6 +242,7 @@
         <p class="dir">[Clic.]</p>
         <p>Y una persona responde por el resultado. Esa responsabilidad no se le puede delegar a algo que no puede perder nada.</p>
         <p class="dir">[Clic.]</p>
+        <p>En software ya se ve: hay equipos donde revisar código se volvió revisar evidencia de que funciona, videos, capturas, pruebas, y donde la mayor parte del cómputo se va en verificar, no en producir.</p>
         <p>Antes, el valor era hacer el análisis. Ahora es definir qué se permite, medir si funciona, y la más difícil: saber cuándo una respuesta que se ve bien está mal. Eso es estadística, es dominio del negocio. Y eso nos lleva a quién construye.</p>`,
     },
     {
@@ -257,22 +263,25 @@
 ...
 <span class="warn">8. ⚠ CUIDADO CON EL PASO 8.
    NUNCA ENVÍES SIN REVISAR.</span></pre>
-            <p style="font-size:30px;margin:14px 0 0;line-height:1.22" data-step="1">Las mayúsculas no son un control. Son la confesión de que <em>el control no existe</em>.</p>
+            <p style="font-size:29px;margin:14px 0 0;line-height:1.22" data-step="1">Las mayúsculas no son un control: confiesan que <em>no existe</em>.</p>
+            <div class="pyr" data-step="2"><div class="l1">código · tipos · reglas que se verifican</div><div class="l2">verificación</div><div class="l3">prosa</div></div>
           </div>
-          <div class="right" data-step="2">
+          <div class="right" data-step="3">
             <span class="t-label">Lo que construye la empresa</span>
             <div class="glass"><div class="nm">Ramp · Glass <small>espacio interno de IA, abierto en oct. 2026</small></div>
               <div class="st"><div><b>323</b><span>personas</span></div><div><b>6,500+</b><span>ediciones</span></div><div><b>350+</b><span>skills</span></div></div>
               <div class="quote">Glyman: cuando alguien encuentra un mejor flujo, todo su equipo lo obtiene.</div></div>
           </div>
         </div>
-        ${read('Tu mejor flujo de trabajo es de la empresa en cuanto lo compartes. El valor se mueve al equipo que construye la plataforma.', 3)}
-        <div class="f-src">Cifras reportadas por Ramp (E. Glyman, oct. 2026), sin auditoría externa · Ejemplo de skill: ilustrativo</div>`,
+        ${read('Tu mejor flujo de trabajo es de la empresa en cuanto lo compartes. El valor se mueve al equipo que construye la plataforma.', 4)}
+        <div class="f-src">Pirámide: Lauren Tan (@poteto), SpaceX AI, charla 2026 · Ramp: cifras de la empresa (oct. 2026) · Skill: ilustrativa</div>`,
       notes: `
         <p>Quinto hecho: construir parece descentralizarse, pero lo serio se centraliza.</p>
         <p>Hoy cualquiera escribe una skill: un archivo con pasos para el agente. Y en casi todas hay una línea así: "CUIDADO CON EL PASO 8", en mayúsculas.</p>
         <p class="dir">[Clic.]</p>
         <p>Las mayúsculas no son un control. Son la confesión de que el control no existe. Funciona hasta el día en que no.</p>
+        <p class="dir">[Clic: la pirámide.]</p>
+        <p>Y lo dice igual gente que manda miles de cambios al mes con agentes. Lauren Tan, de SpaceX AI, lo explica como una pirámide invertida: la mayor parte del control vive en el código mismo, en tipos y reglas que se verifican solas; luego en verificación; y la prosa, las instrucciones, va al final y es lo mínimo. Su regla: cada vez que corriges al agente, conviertes la corrección en una regla que el sistema verifica, no en una línea más de instrucciones.</p>
         <p class="dir">[Clic.]</p>
         <p>Y las empresas responden centralizando. Ramp construyó Glass: un espacio interno donde todos tienen la configuración que antes solo tenían sus empleados más avanzados. Reportan 323 personas, más de 6,500 ediciones y más de 350 skills compartidas. Son cifras de la propia empresa.</p>
         <p class="dir">[Clic.]</p>
@@ -301,6 +310,7 @@
         <p>Sexto hecho, el técnico: la calidad de la entrada pone el techo. El OCR, leer texto de una imagen, parece un problema resuelto.</p>
         <p class="dir">[Clic.]</p>
         <p>Y lo está, en la foto buena: menos de 1 por ciento de error por carácter. Pero en un escaneo degradado, el error típico está entre 5 y 20 por ciento. Y un benchmark de este año encontró que todos los modelos caen con imágenes degradadas; la imagen limpia es el techo. Si estratifican sus documentos en buena, media y mala, aparecen tres poblaciones, y en la mala ni el mejor modelo te salva.</p>
+        <p>Y esto no es solo OCR. Un agente que programa copia lo que ve en el repositorio: si hay malos patrones, los replica, como maleza que se esparce. En OCR la entrada es la foto; en código, es el repositorio.</p>
         <p class="dir">[Clic.]</p>
         <p>Lectura laboral: estratificar, decidir qué se manda a una persona y arreglar cómo se capturan los documentos, o sea, pedir una mejor foto, sigue siendo trabajo humano. Y es trabajo de ciencia de datos.</p>`,
     },
